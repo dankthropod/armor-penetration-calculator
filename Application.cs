@@ -5,9 +5,9 @@ class Application {
   	public static void Main (string[] args) {
     	// Console.WriteLine ("Hello World");
 		
-		Armor armor = new Armor();
-		armor.thickness = 50.0f;
-		armor.density = 7.86f;
+		Armor ShermanArmor = new Armor();
+		ShermanArmor.thickness = 50.0f;
+		ShermanArmor.density = 7.86f;
 
 		Projectile ShermanProjectile = new Projectile();
 		ShermanProjectile.length = 0.35f;
@@ -15,10 +15,11 @@ class Application {
 		ShermanProjectile.density = 10f;
 		
 		Console.WriteLine("Projectile Penetrated (m):");
-		Console.WriteLine(armor.CalculatePenetrationDepth(armor, ShermanProjectile));
+		Console.WriteLine(ShermanArmor.CalculatePenetrationDepth(ShermanArmor, ShermanProjectile));
 
 		Test test = new Test();
-		test.ArmorDensityPenetration(armor, ShermanProjectile);
-		test.AngleTest(armor, ShermanProjectile);
+		test.ArmorDensityPenetration(ShermanArmor, ShermanProjectile);
+		test.ProjectileDensityPenetration(ShermanArmor, ShermanProjectile);
+		test.AngleTest(ShermanArmor, ShermanProjectile);
   	}
 }

@@ -23,7 +23,7 @@ class Test {
 		try {
 			var plt = new ScottPlot.Plot(400, 300);
 			plt.AddScatter(armor_density, penetration_array);
-			plt.SaveFig("Tests/PenetrationDensityTest.png");
+			plt.SaveFig("Tests/PenetrationArmorDensityTest.png");
 		}
 
 		catch (System.Exception)
@@ -46,8 +46,21 @@ class Test {
 			float penetration = armor.CalculatePenetrationDepth(armor, projectile);
 			penetration_list.Add(penetration);
 		}
-		double[] armor_density = armor_density_list.Select(x => (double)x).ToArray();
+		double[] projectile_density = projectile_density_list.Select(x => (double)x).ToArray();
 		double[] penetration_array = penetration_list.Select(x => (double)x).ToArray();
+
+		try {
+			var plt = new ScottPlot.Plot(400, 300);
+			plt.AddScatter(projectile_density, penetration_array);
+			plt.SaveFig("Tests/PenetrationProjectileDensityTest.png");
+		}
+
+		catch (System.Exception)
+		{
+			Console.WriteLine("Is libgdiplus missing?");
+		}
+
+		return penetration_array;
 	}
 	public double[] AngleTest(Armor armor, Projectile projectile)
 	{
