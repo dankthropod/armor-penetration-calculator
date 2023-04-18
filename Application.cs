@@ -9,7 +9,10 @@ class Application {
 		Projectile projectile = new Projectile();
 		
 		Console.WriteLine("Projectile Penetrated (m):");
-		Console.WriteLine(armor.CalculatePenetration(armor, projectile));
-		
+		Console.WriteLine(armor.CalculatePenetrationDepth(armor, projectile));
+
+		Test test = new Test();
+		test.ArmorDensityPenetration();
+		test.AngleTest();
   	}
 }

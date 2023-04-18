@@ -4,20 +4,22 @@ class Armor
 {
 	public float thickness; // in mm
 	public float density;
+	public float effective_thickness;
 	
     public Armor()
     {
-		thickness = 150.0f;
+		thickness = 60.0f;
 		density = 7.85f;
     }
 
-	public float CalculatePenetration(Armor armor, Projectile projectile) {
+	public float CalculatePenetrationDepth(Armor armor, Projectile projectile) { // in m
 		float penetration_depth = projectile.length * (projectile.density/armor.density);
 		return penetration_depth;
 	}
 
 	public float CalculateEffectiveArmor(Armor armor, Projectile projectile) {
-		float effective_armor = armor.thickness/MathF.Cos(projectile.angle);
+		float radians_angle = ( MathF.PI / 180 )* projectile.angle;
+		float effective_armor = armor.thickness/(MathF.Cos(radians_angle));
 		return effective_armor;
 	}
 }
