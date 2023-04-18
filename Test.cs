@@ -4,13 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 
 class Test {
-	public void ArmorDensityPenetration()
+	public double[] ArmorDensityPenetration(Armor armor, Projectile projectile)
 	{
         List<float> armor_density_list = new List<float>();
         List<float> penetration_list = new List<float>();
-
-        Armor armor = new Armor();
-		Projectile projectile = new Projectile();
 
 		foreach (float value in Enumerable.Range(50, 150))
 		{
@@ -33,12 +30,11 @@ class Test {
 		{
 			Console.WriteLine("Is libgdiplus missing?");
 		}
-	}
-	public void AngleTest()
-	{
-		Armor armor = new Armor();
-		Projectile projectile = new Projectile();
 
+		return penetration_array;
+	}
+	public double[] AngleTest(Armor armor, Projectile projectile)
+	{
 		List<float> projectile_angle_list = new List<float>();
 		List<float> effective_armor_thickness_list = new List<float>();
 
@@ -64,5 +60,7 @@ class Test {
         {
             Console.WriteLine("Is libgdiplus missing?");
         }
+
+		return effective_armor_thickness_array;
     }
 }

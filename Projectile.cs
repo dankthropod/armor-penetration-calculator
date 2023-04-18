@@ -8,8 +8,8 @@ class Projectile
 	
     public Projectile()
     {
-		length = 0.5f; 
-		velocity = 620f;
+		length = 0.35f; 
+		velocity = 450f;
 		density = 10f;
 		angle = 20f;
     }
