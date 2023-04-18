@@ -23,7 +23,7 @@ class Test {
 		try {
 			var plt = new ScottPlot.Plot(400, 300);
 			plt.AddScatter(armor_density, penetration_array);
-			plt.SaveFig("Tests/PenetrationTest.png");
+			plt.SaveFig("Tests/PenetrationDensityTest.png");
 		}
 
 		catch (System.Exception)
@@ -32,6 +32,22 @@ class Test {
 		}
 
 		return penetration_array;
+	}
+	public double[] ProjectileDensityPenetration(Armor armor, Projectile projectile) 
+	{
+		List<float> projectile_density_list = new List<float>();
+        List<float> penetration_list = new List<float>();
+
+		foreach (float value in Enumerable.Range(50, 150))
+		{
+			projectile.density = value / 10;
+			projectile_density_list.Add(projectile.density);
+
+			float penetration = armor.CalculatePenetrationDepth(armor, projectile);
+			penetration_list.Add(penetration);
+		}
+		double[] armor_density = armor_density_list.Select(x => (double)x).ToArray();
+		double[] penetration_array = penetration_list.Select(x => (double)x).ToArray();
 	}
 	public double[] AngleTest(Armor armor, Projectile projectile)
 	{

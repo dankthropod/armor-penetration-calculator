@@ -8,8 +8,8 @@ class Armor
 	
     public Armor()
     {
-		thickness = 60.0f;
-		density = 7.85f;
+		thickness = 50.0f;
+		density = 7.86f;
     }
 
 	public float CalculatePenetrationDepth(Armor armor, Projectile projectile) { // in m
