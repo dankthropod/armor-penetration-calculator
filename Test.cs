@@ -23,17 +23,15 @@ class Test {
 		double[] armor_density = armor_density_list.Select(x => (double)x).ToArray();
 		double[] penetration_array = penetration_list.Select(x => (double)x).ToArray();
 
-		var plt = new ScottPlot.Plot(400, 300);
-		plt.AddScatter(armor_density, penetration_array);
-
-		try
-		{
+		try {
+			var plt = new ScottPlot.Plot(400, 300);
+			plt.AddScatter(armor_density, penetration_array);
 			plt.SaveFig("Tests/PenetrationTest.png");
 		}
 
 		catch (System.Exception)
 		{
-			Console.WriteLine("Error writing image file");
+			Console.WriteLine("Is libgdiplus missing?");
 		}
 	}
 	public void AngleTest()
@@ -55,17 +53,16 @@ class Test {
         double[] projectile_angle_array = projectile_angle_list.Select(x => (double)x).ToArray();
         double[] effective_armor_thickness_array = effective_armor_thickness_list.Select(x => (double)x).ToArray();
 
-        var plt = new ScottPlot.Plot(400, 300);
-        plt.AddScatter(projectile_angle_array, effective_armor_thickness_array);
-
         try
         {
+			var plt = new ScottPlot.Plot(400, 300);
+       		plt.AddScatter(projectile_angle_array, effective_armor_thickness_array);
             plt.SaveFig("Tests/AngleTest.png");
         }
 
         catch (System.Exception)
         {
-            Console.WriteLine("Error writing image file");
+            Console.WriteLine("Is libgdiplus missing?");
         }
     }
 }
