@@ -5,8 +5,7 @@ using System.IO;
 class Application {
 	
   	public static void Main (string[] args) {
-    	// Console.WriteLine ("Hello World");
-		XMLTank sherman = new XMLTank();
+		// XMLTank sherman = new XMLTank();
 		
 		ArmorPenetration.Armor ShermanArmor = new ArmorPenetration.Armor();
 		ShermanArmor.thickness = 50.0f;
