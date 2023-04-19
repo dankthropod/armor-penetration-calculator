@@ -1,9 +1,12 @@
 using System;
+using System.Xml.Serialization;
+using System.IO;
 
 class Application {
 	
   	public static void Main (string[] args) {
     	// Console.WriteLine ("Hello World");
+		XMLTank sherman = new XMLTank();
 		
 		ArmorPenetration.Armor ShermanArmor = new ArmorPenetration.Armor();
 		ShermanArmor.thickness = 50.0f;
@@ -22,4 +25,32 @@ class Application {
 		test.ProjectileDensityPenetration(ShermanArmor, ShermanProjectile);
 		test.AngleTest(ShermanArmor, ShermanProjectile);
   	}
+
+}
+
+public class XMLTank {
+	public XMLTank() {
+		ArmorPenetration.Armor armor = new ArmorPenetration.Armor();
+		ArmorPenetration.Projectile projectile = new ArmorPenetration.Projectile();
+
+		XMLTank xo = new XMLTank();
+		xo.DeserializeArmor("Examples/m4a1.xml", armor);
+	}
+
+	ArmorPenetration.Armor DeserializeArmor(string filename, ArmorPenetration.Armor armor) {
+		XmlSerializer serializer = new XmlSerializer(typeof(ArmorPenetration.Armor));
+		
+		using (Stream reader = new FileStream(filename, FileMode.Open))
+        {
+            // Call the Deserialize method to restore the object's state.
+            armor = (ArmorPenetration.Armor)serializer.Deserialize(reader);
+
+        }
+
+		Console.Write(
+        armor.thickness + "\t" +
+        armor.density + "\t");
+
+		return armor;
+	}
 }

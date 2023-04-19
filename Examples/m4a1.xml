@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?> 
+
+<tank>
+    <armor>
+        <!-- <name>front_plate</name> -->
+        <thickness>50.8</thickness>
+        <!-- <position></position>
+        <length></length>
+        <width></width>
+        <rotation></rotation> -->
+        <density>7.86</density>
+    </armor>
+
+    <projectile>
+        <!-- <name>"BR-350"</name> -->
+        <length>0.35</length>
+        <velocity>450</velocity>
+        <density>10</density>
+    </projectile>
+</tank>

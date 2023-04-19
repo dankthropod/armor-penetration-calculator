@@ -6,12 +6,6 @@ namespace ArmorPenetration {
 		public float thickness; // in mm
 		public float density;
 		public float effective_thickness;
-		
-		public Armor()
-		{
-			thickness = 50.0f;
-			density = 7.86f;
-		}
 
 		public float CalculatePenetrationDepth(Armor armor, Projectile projectile) { // in m
 			float penetration_depth = projectile.length * (projectile.density/armor.density);

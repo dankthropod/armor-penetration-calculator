@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<armor>
+    <thickness>45</thickness>
+    <position></position>
+    <length></length>
+    <width></width>
+    <rotation></rotation>
+    <density>7.86</density>
+</armor>
+
+<projectile>
+    <length>0.35</length>
+    <velocity>655</velocity>
+    <density>10</density>
+</projectile>

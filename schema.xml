@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  
+    attributeFormDefault="unqualified"   
+    elementFormDefault="qualified"
+    targetNameSpace="tank">
+    <xs:element name = tank>
+        <xs:complexType>  
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="armor">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type = "xs:string">
+                            <xs:element name="thickness" type = "xs:decimal">
+                            <xs:element name="position" type = "xs:decimal">
+                            <xs:element name="length" type = "xs:decimal">
+                            <xs:element name="width" type = "xs:decimal">
+                            <xs:element name="rotation" type = "xs:decimal">
+                            <xs:element name="density" type = "xs:decimal">
+                        </xs:sequence>
+                    </xs:complexType>
+                <xs:element maxOccurs="unbounded" name="projectile">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type = "xs:string">
+                            <xs:element name="length" type = "xs:decimal">
+                            <xs:element name="velocity" type = "xs:decimal">
+                            <xs:element name="density" type = "xs:decimal">
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>                
